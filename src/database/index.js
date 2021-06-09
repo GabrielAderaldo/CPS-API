@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017',
+mongoose.connect('mongodb+srv://usuarioDB:tomate98@cluster0.nz9yi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
 {useNewUrlParser:true,
 useUnifiedTopology:true,
 useFindAndModify:false,
