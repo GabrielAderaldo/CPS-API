@@ -8,6 +8,6 @@ require('./controllers/coreControllers')(app)
 
 
 
-app.listen(8051,()=>{
-    console.log("Servidor está rodando na porta: 8051")
+app.listen(3000,()=>{
+    console.log("Servidor está rodando na porta: 3000")
 })
