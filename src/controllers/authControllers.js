@@ -1,6 +1,7 @@
 const express = require('express')
 const brc = require('bcrypt')
 const User = require('../models/users')
+const Registro = require('../models/registros')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 const authConfig = require('../config/auth.json')
@@ -13,14 +14,20 @@ function generatedToken(params ={}){
 
 //As rotas para o acesso serão feitas aqui pois assim não precisa de autenticação...
 router.get('/rfidEntrada', async (req,res)=>{
-    res.status(200).json({Messagem:"Ok"})
+
+
+    registrar = {
+        name:"Gabriel Aderaldo",
+        indentificador:"Cartâo branco  99 0A 6D 99"
+    }
+
+
+    const registro = await Registro.create(registrar)
+
+
+
+    res.status(200).json({mensagem:`Registrado a entrada de: ${registro.name} com o Tolken: ${registro.indentificador}`})
 })
-
-
-router.post('/ok', async (req,res)=>{
-    res.status(200).json({recebido:req.body})
-})
-
 
 
 router.post('/registro', async (req,res)=>{
