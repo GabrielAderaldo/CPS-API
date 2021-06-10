@@ -17,6 +17,11 @@ router.get('/rfidEntrada', async (req,res)=>{
 })
 
 
+router.post('/ok', async (req,res)=>{
+    res.status(200).json({recebido:req.body})
+})
+
+
 
 router.post('/registro', async (req,res)=>{
     
