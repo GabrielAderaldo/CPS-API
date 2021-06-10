@@ -15,10 +15,11 @@ function generatedToken(params ={}){
 //As rotas para o acesso serão feitas aqui pois assim não precisa de autenticação...
 router.get('/rfidEntrada', async (req,res)=>{
 
+    
 
     registrar = {
         name:"Gabriel Aderaldo",
-        indentificador:"Cartâo branco  99 0A 6D 99"
+        indentificador:`Cartâo branco  99 0A 6D 99 No milisegundo: ${Date.now()}`
     }
 
 

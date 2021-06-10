@@ -9,7 +9,6 @@ const RegistroSchema = new mongoose.Schema({
     },
     indentificador:{
         type:String,
-        unique:true,
         required:true,
         lowercase:true
     },
@@ -25,6 +24,6 @@ RegistroSchema.pre('save', async function(next){
 })
 
 
-const Registro = mongoose.model('Registro',Registro)
+const Registro = mongoose.model('Registro',RegistroSchema)
 
 module.exports = Registro
