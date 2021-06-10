@@ -18,7 +18,6 @@ router.get('/rfidEntrada', async (req,res)=>{
 
 
 
-
 router.post('/registro', async (req,res)=>{
     
     try{
@@ -41,7 +40,9 @@ router.post('/registro', async (req,res)=>{
 
 router.post('/login', async (req,res)=>{
     try{
+        const cheagando = req.body
         const {email,password} = req.body
+        console.log(cheagando)
         const user = await User.findOne({email}).select('+password')
         if(!user){return res.status(400).send({Erro:"Usuario não encontrado..."})}
         if(!await brc.compare(password,user.password)){res.status(400).send({error:"Senha incorreta!"})}

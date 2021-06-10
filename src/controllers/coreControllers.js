@@ -8,7 +8,8 @@ router.use(authMiddlewhere)
 
 router.get('/DashBoard',(req,res)=>{
     const id = req.userId
-    res.json({Autenticação:true,id:id})
+    const type = req.userTypeUser
+    res.json({Autenticação:type,id:id})
 })
 
 router.get('/on',(req,res) =>{
