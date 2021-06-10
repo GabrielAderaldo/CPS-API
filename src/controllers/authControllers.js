@@ -12,6 +12,14 @@ function generatedToken(params ={}){
 }
 
 
+router.get('/listar', async (req,res)=>{
+
+    const listagem = await Registro.find()
+    res.status(200).json({ listagem })
+
+})
+
+
 //As rotas para o acesso serão feitas aqui pois assim não precisa de autenticação...
 router.get('/rfidEntrada', async (req,res)=>{
 
